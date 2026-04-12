@@ -1,0 +1,9 @@
+Stock Portfolio Report
+
+AAPL: 3 shares
+GOOGL: 4 shares
+AMZN: 1 shares
+
+Total Investment: 1230
+Current Value: 1335
+Net Profit/Loss: 105
