@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Stock Portfolio Tracker</h1>
+
+    <form method="POST">
+        <input type="text" name="stock" placeholder="Enter Stock (AAPL)" required>
+        <input type="number" name="quantity" placeholder="Enter Quantity" required>
+        <button type="submit">Add Stock</button>
+    </form>
+
+    <p>{{ message }}</p>
+
+    <h2>📋 Portfolio</h2>
+
+    <table>
+        <tr>
+            <th>Stock</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Investment</th>
+        </tr>
+
+        {% for item in portfolio %}
+        <tr>
+            <td>{{ item.stock }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ item.price }}</td>
+            <td>${{ item.investment }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/save">
+        <button>💾 Save to File</button>
+    </a>
+
+</div>
+
+</body>
+</html>
